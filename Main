@@ -1,0 +1,73 @@
+import turtle
+wn = turtle.Screen()
+wn.setworldcoordinates(0, 0, 270, 270)
+
+def Blankboard(t):
+    t.penup()
+    t.setpos(0,90)
+    t.pendown()
+    t.forward(270)
+    t.penup()
+    t.setpos(0,180)
+    t.pendown()
+    t.forward(270)
+    t.penup()
+    t.setpos(90,270)
+    t.right(90)
+    t.pendown()
+    t.forward(270)
+    t.penup()
+    t.setpos(180,270)
+    t.pendown()
+    t.forward(270)
+
+def point1(t):
+    t.penup
+    t.setpos(45,225)
+    t.pendown
+    
+def point2(t):
+    t.penup
+    t.setpos(135,135)
+    t.pendown
+
+def point3(t):
+    t.penup
+    t.setpos(225,225)
+    t.pendown
+
+def point4(t):
+    t.penup
+    t.setpos(45,135)
+    t.pendown
+
+def point5(t):
+    t.penup
+    t.setpos(135,135)
+    t.pendown
+
+def point6(t):
+    t.penup
+    t.setpos(225,135)
+    t.pendown
+
+def point7(t):
+    t.penup
+    t.setpos(45,45)
+    t.pendown
+
+def point8(t):
+    t.penup
+    t.setpos(135,45)
+    t.pendown
+
+def point9(t):
+    t.penup
+    t.setpos(225,45)
+    t.pendown
+    
+
+gameboard = turtle.Turtle()
+gameboard.speed(0)
+
+Blankboard(gameboard)
