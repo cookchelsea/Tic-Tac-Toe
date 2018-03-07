@@ -1,112 +1,47 @@
-import turtle
+import turtle 
 
 def Blankboard(t):
-    t.penup()
-    t.setpos(0,90)
-    t.pendown()
-    t.forward(270)
-    t.penup()
-    t.setpos(0,180)
-    t.pendown()
-    t.forward(270)
-    t.penup()
-    t.setpos(90,270)
+    horiz1 = [0,90]
+    horiz2 = [0,180]
+    vert1 = [90,270]
+    vert2 = [180,270]
+    fullhoriz = [horiz1, horiz2]
+    fullvert = [vert1, vert2]
+    
+    for pnt in fullhoriz:
+        t.penup()
+        t.setpos(pnt)
+        t.pendown()
+        t.forward(270)
+        
     t.right(90)
-    t.pendown()
-    t.forward(270)
-    t.penup()
-    t.setpos(180,270)
-    t.pendown()
-    t.forward(270)
-
-def point1(t):
-    t.penup()
-    t.setpos(45,225)
-    t.pendown()
     
-def point2(t):
-    t.penup()
-    t.setpos(135,225)
-    t.pendown()
-
-def point3(t):
-    t.penup()
-    t.setpos(225,225)
-    t.pendown()
-
-def point4(t):
-    t.penup()
-    t.setpos(45,135)
-    t.pendown()
-
-def point5(t):
-    t.penup()
-    t.setpos(135,135)
-    t.pendown()
-
-def point6(t):
-    t.penup()
-    t.setpos(225,135)
-    t.pendown()
-
-def point7(t):
-    t.penup()
-    t.setpos(45,45)
-    t.pendown()
-
-def point8(t):
-    t.penup()
-    t.setpos(135,45)
-    t.pendown()
-
-def point9(t):
-    t.penup()
-    t.setpos(225,45)
-    t.pendown()
-    
-def player1choice(t):
-    t.penup()
-    t.write(str('X'))
-    t.pendown()
+    for pnt in fullvert:
+        t.penup()
+        t.setpos(pnt)
+        t.pendown()
+        t.forward(270)
 
 def startgame(t,n):
     Blankboard(n)
-    point1(t)
-    t.penup()
-    t.write(str('1'))
-    t.pendown()
-    point2(t)
-    t.penup()
-    t.write(str('2'))
-    t.pendown()
-    point3(t)
-    t.penup()
-    t.write(str('3'))
-    t.pendown()
-    point4(t)
-    t.penup()
-    t.write(str('4'))
-    t.pendown()
-    point5(t)
-    t.penup()
-    t.write(str('5'))
-    t.pendown()
-    point6(t)
-    t.penup()
-    t.write(str('6'))
-    t.pendown()
-    point7(t)
-    t.penup()
-    t.write(str('7'))
-    t.pendown()
-    point8(t)
-    t.penup()
-    t.write(str('8'))
-    t.pendown()
-    point9(t)
-    t.penup()
-    t.write(str('9'))
-    t.pendown()
+    pnt1 = [45,225]
+    pnt2 = [135,225]
+    pnt3 = [225,225]
+    pnt4 = [45,135]
+    pnt5 = [135,135]
+    pnt6 = [225,135]
+    pnt7 = [45,45]
+    pnt8 = [135,45]
+    pnt9 = [225,45]
+    allpoints = [pnt1, pnt2, pnt3, pnt4, pnt5, pnt6, pnt7, pnt8, pnt9]
+    count = 1
+    for pnt in allpoints:
+        t.penup()
+        t.setpos(pnt)
+        t.write(str(count))
+        t.pendown
+        count += 1
+    
 
 wn = turtle.Screen()
 wn.setworldcoordinates(0, 0, 270, 270)
@@ -117,5 +52,5 @@ gameboard.speed(0)
 numbers = turtle.Turtle()
 numbers.speed(0)
 
-
-startgame(numbers,gameboard)
+startgame(numbers, gameboard)
+wn.exitonclick()
