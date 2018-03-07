@@ -61,7 +61,7 @@ def draw_O(t,pnt):
     t.pendown()
     t.circle(35,360,360)
 
-def player1_turn():
+def player1_turn():                 #Function that tries to prevent errant inputs
     pnt1 = [45,225]
     pnt2 = [135,225]
     pnt3 = [225,225]
@@ -72,8 +72,9 @@ def player1_turn():
     pnt8 = [135,45]
     pnt9 = [225,45]
     choice = input("Player 1, please type the number of your selection")
-    for number in range(9):
-        if choice == str(number+1):
+    print (choice)
+    for number in range(9):         #Iterating through possible choices to change the type to int if choice is valid
+        if choice == str(number+1): #Checks from 1 to 9 if choice is the string of a valid choice
             choice = int(choice)
     if type(choice) == type(int(1)):
         print(type(choice))
@@ -100,7 +101,7 @@ def player1_turn():
         print("Please make a valid selection between 1 and 9.")
         player1_turn()
 
-def player2_turn():
+def player2_turn():                 #Runtime error if non-int is entered
     pnt1 = [45,225]
     pnt2 = [135,225]
     pnt3 = [225,225]
@@ -150,5 +151,5 @@ player2 = turtle.Turtle()
 player2.speed(0)
 player2.pensize(5)
 
-print (player1_turn())
+print (player2_turn())
 wn.exitonclick()
