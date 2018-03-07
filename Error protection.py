@@ -73,32 +73,28 @@ def player1_turn():
     pnt9 = [225,45]
     choice = input("Player 1, please type the number of your selection")
     for number in range(9):
-        count = 1
-        if choice == str(count):
+        if choice == str(number+1):
             choice = int(choice)
-        count += 1
-    if type(choice) != type(1):
+    if type(choice) == type(int(1)):
         print(type(choice))
-        print("Please make a valid selection between 1 and 9.")
-        player1_turn()
-    if choice == 1:
-        return pnt1
-    elif choice == 2:
-        return pnt2
-    elif choice == 3:
-        return pnt3
-    elif choice == 4:
-        return pnt4
-    elif choice == 5:
-        return pnt5
-    elif choice == 6:
-        return pnt6
-    elif choice == 7:
-        return pnt7
-    elif choice == 8:
-        return pnt8
-    elif choice == 9:
-        return pnt9
+        if int(choice) == 1:
+            return pnt1
+        elif int(choice) == 2:
+            return pnt2
+        elif int(choice) == 3:
+            return pnt3
+        elif int(choice) == 4:
+            return pnt4
+        elif int(choice) == 5:
+            return pnt5
+        elif int(choice) == 6:
+            return pnt6
+        elif int(choice) == 7:
+            return pnt7
+        elif int(choice) == 8:
+            return pnt8
+        elif int(choice) == 9:
+            return pnt9
     else:
         print(type(choice))
         print("Please make a valid selection between 1 and 9.")
