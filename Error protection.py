@@ -1,6 +1,6 @@
 import turtle 
 
-def Blankboard(t):
+def Blankboard(t):                  #Draws the game board
     horiz1 = [0,90]
     horiz2 = [0,180]
     vert1 = [90,270]
@@ -8,15 +8,15 @@ def Blankboard(t):
     fullhoriz = [horiz1, horiz2]
     fullvert = [vert1, vert2]
     
-    for pnt in fullhoriz:
+    for pnt in fullhoriz:           #Draws both horizontal lines
         t.penup()
         t.setpos(pnt)
         t.pendown()
         t.forward(270)
         
-    t.right(90)
+    t.right(90)                     #Corrects orientation for vertical lines
     
-    for pnt in fullvert:
+    for pnt in fullvert:            #Draws both vertical lines
         t.penup()
         t.setpos(pnt)
         t.pendown()
@@ -42,7 +42,7 @@ def startgame(t,n):
         t.pendown
         count += 1
 
-def draw_x(t,pnt):
+def draw_x(t,pnt):                  #Player 1
     t.penup()
     t.setpos(pnt)
     t.pendown()
@@ -54,7 +54,7 @@ def draw_x(t,pnt):
     t.forward(45)
     t.forward(-90)
     
-def draw_O(t,pnt):
+def draw_o(t,pnt):                  #Player 2
     pnt[1] = pnt[1]-35
     t.penup()
     t.setpos(pnt)
@@ -77,7 +77,6 @@ def player1_turn():                 #Function that tries to prevent errant input
         if choice == str(number+1): #Checks from 1 to 9 if choice is the string of a valid choice
             choice = int(choice)
     if type(choice) == type(int(1)):
-        print(type(choice))
         if int(choice) == 1:
             return pnt1
         elif int(choice) == 2:
@@ -97,9 +96,8 @@ def player1_turn():                 #Function that tries to prevent errant input
         elif int(choice) == 9:
             return pnt9
     else:
-        print(type(choice))
         print("Please make a valid selection between 1 and 9.")
-        player1_turn()
+        return player1_turn()
 
 def player2_turn():                 #Runtime error if non-int is entered
     pnt1 = [45,225]
@@ -111,28 +109,33 @@ def player2_turn():                 #Runtime error if non-int is entered
     pnt7 = [45,45]
     pnt8 = [135,45]
     pnt9 = [225,45]
-    choice = int(input("Player 2, please type the number of your selection"))
-    if choice == 1:
-        return pnt1
-    elif choice == 2:
-        return pnt2
-    elif choice == 3:
-        return pnt3
-    elif choice == 4:
-        return pnt4
-    elif choice == 5:
-        return pnt5
-    elif choice == 6:
-        return pnt6
-    elif choice == 7:
-        return pnt7
-    elif choice == 8:
-        return pnt8
-    elif choice == 9:
-        return pnt9
+    choice = input("Player 2, please type the number of your selection")
+    print (choice)
+    for number in range(9):         #Iterating through possible choices to change the type to int if choice is valid
+        if choice == str(number+1): #Checks from 1 to 9 if choice is the string of a valid choice
+            choice = int(choice)
+    if type(choice) == type(int(1)):
+        if int(choice) == 1:
+            return pnt1
+        elif int(choice) == 2:
+            return pnt2
+        elif int(choice) == 3:
+            return pnt3
+        elif int(choice) == 4:
+            return pnt4
+        elif int(choice) == 5:
+            return pnt5
+        elif int(choice) == 6:
+            return pnt6
+        elif int(choice) == 7:
+            return pnt7
+        elif int(choice) == 8:
+            return pnt8
+        elif int(choice) == 9:
+            return pnt9
     else:
         print("Please make a valid selection between 1 and 9.")
-        player2_turn()
+        return player2_turn()
         
 wn = turtle.Screen()
 wn.setworldcoordinates(0, 0, 270, 270)
@@ -151,5 +154,25 @@ player2 = turtle.Turtle()
 player2.speed(0)
 player2.pensize(5)
 
-print (player2_turn())
+
+startgame(numbers,gameboard)
+
+draw_x(player1,player1_turn())
+
+draw_o(player2,player2_turn())
+
+draw_x(player1,player1_turn())
+
+draw_o(player2,player2_turn())
+
+draw_x(player1,player1_turn())
+
+draw_o(player2,player2_turn())
+
+draw_x(player1,player1_turn())
+
+draw_o(player2,player2_turn())
+
+draw_x(player1,player1_turn())
+
 wn.exitonclick()
