@@ -1,6 +1,4 @@
 import turtle
-wn = turtle.Screen()
-wn.setworldcoordinates(0, 0, 270, 270)
 
 def Blankboard(t):
     t.penup()
@@ -28,7 +26,7 @@ def point1(t):
     
 def point2(t):
     t.penup()
-    t.setpos(135,135)
+    t.setpos(135,225)
     t.pendown()
 
 def point3(t):
@@ -71,6 +69,47 @@ def player1choice(t):
     t.write(str('X'))
     t.pendown()
 
+def startgame(t):
+    point1(t)
+    t.penup()
+    t.write(str('1'))
+    t.pendown()
+    point2(t)
+    t.penup()
+    t.write(str('2'))
+    t.pendown()
+    point3(t)
+    t.penup()
+    t.write(str('3'))
+    t.pendown()
+    point4(t)
+    t.penup()
+    t.write(str('4'))
+    t.pendown()
+    point5(t)
+    t.penup()
+    t.write(str('5'))
+    t.pendown()
+    point6(t)
+    t.penup()
+    t.write(str('6'))
+    t.pendown()
+    point7(t)
+    t.penup()
+    t.write(str('7'))
+    t.pendown()
+    point8(t)
+    t.penup()
+    t.write(str('8'))
+    t.pendown()
+    point9(t)
+    t.penup()
+    t.write(str('9'))
+    t.pendown()
+
+wn = turtle.Screen()
+wn.setworldcoordinates(0, 0, 270, 270)
+
 gameboard = turtle.Turtle()
 gameboard.speed(0)
 
@@ -78,4 +117,4 @@ numbers = turtle.Turtle()
 numbers.speed(0)
 
 Blankboard(gameboard)
-player1choice(point1(numbers))
+startgame(numbers)
