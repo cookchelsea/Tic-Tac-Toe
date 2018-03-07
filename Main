@@ -69,7 +69,8 @@ def player1choice(t):
     t.write(str('X'))
     t.pendown()
 
-def startgame(t):
+def startgame(t,n):
+    Blankboard(n)
     point1(t)
     t.penup()
     t.write(str('1'))
@@ -116,5 +117,5 @@ gameboard.speed(0)
 numbers = turtle.Turtle()
 numbers.speed(0)
 
-Blankboard(gameboard)
-startgame(numbers)
+
+startgame(numbers,gameboard)
